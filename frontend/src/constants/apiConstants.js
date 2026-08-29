@@ -1,9 +1,9 @@
 /**
  * API constants — single source of truth for all backend endpoint paths.
- * Change the base URL here when deploying; nothing else needs to change.
+ * Hardcoded production backend URL to bypass Vercel environment variable issues
  */
 
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
+export const API_BASE_URL = 'https://finzly-pdf-anaylyser.onrender.com';
 
 export const API_ENDPOINTS = {
   ANALYSE: '/api/v1/pdf/analyse',
