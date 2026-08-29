@@ -1,0 +1,36 @@
+# ============================================================
+# PDF Analyser — Monorepo .gitignore
+# ============================================================
+
+# ---- Environment / Secrets (NEVER commit these) ----
+.env
+.env.local
+.env.production
+application-prod.yml
+application-dev.yml
+
+# ---- Java / Maven ----
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+*.class
+*.jar
+*.war
+*.ear
+!backend/mvnw
+!backend/mvnw.cmd
+
+# ---- Node / NPM ----
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# ---- IDE ----
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+
+# ---- Logs ----
+*.log
+logs/
