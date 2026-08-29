@@ -14,7 +14,7 @@ server:
 app:
   gemini:
     api-key: ${GEMINI_API_KEY:}
-    model: gemini-3.6-flash
+    model: gemini-1.5-pro
     api-url: https://generativelanguage.googleapis.com/v1beta/models/${app.gemini.model}:generateContent
     timeout-seconds: 60
   cors:
