@@ -9,25 +9,20 @@ import styles from './HomePage.module.css';
 
 /**
  * HomePage — the single page of the application.
- *
- * Composes components and wires them to the usePdfAnalysis hook.
- * All state and API logic is in the hook; this page is purely compositional.
  */
 const HomePage = () => {
-  const { result, isLoading, error, handleAnalyse, handleUpload, reset } = usePdfAnalysis();
+  const { result, isLoading, error, handleAnalyse, handleUpload, reset, retry } = usePdfAnalysis();
   const [activeTab, setActiveTab] = useState('url'); // 'url' or 'upload'
 
   return (
     <main className={styles.main} id="main-content">
       {/* Hero section */}
       <header className={styles.hero}>
-        <div className={styles.badge}>Powered by Google Gemini</div>
         <h1 className={styles.title}>
           PDF <span className={styles.titleAccent}>Analyser</span>
         </h1>
         <p className={styles.subtitle}>
-          Paste a publicly accessible PDF URL and get an instant AI-powered
-          structured analysis — document type, title, authors, summary, and key insights.
+          Upload a local PDF or paste a link to get an AI-powered summary instantly.
         </p>
       </header>
 
@@ -68,7 +63,7 @@ const HomePage = () => {
 
       {error && !isLoading && (
         <div className={styles.card}>
-          <ErrorMessage message={error} onRetry={reset} />
+          <ErrorMessage message={error} onRetry={retry} />
         </div>
       )}
 

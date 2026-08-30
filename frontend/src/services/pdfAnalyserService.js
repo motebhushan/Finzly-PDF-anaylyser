@@ -3,11 +3,6 @@ import { API_BASE_URL, API_ENDPOINTS } from '../constants/apiConstants';
 
 /**
  * Service layer for PDF analysis API calls.
- *
- * Why a separate service file?
- *   - Single place to change if the backend URL or request shape changes
- *   - Components and hooks stay clean — no axios imports scattered everywhere
- *   - Easy to mock in tests
  */
 const apiClient = axios.create({
   baseURL: API_BASE_URL,

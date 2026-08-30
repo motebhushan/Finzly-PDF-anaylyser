@@ -12,13 +12,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.stream.Collectors;
 
 /**
- * Global exception handler — single place to intercept all exceptions thrown
- * anywhere in the application and convert them into consistent ApiErrorResponse payloads.
- *
- * Why @RestControllerAdvice?
- *   - Centralises error handling (no try/catch in controllers)
- *   - Ensures every error response has the same JSON shape
- *   - Logs server-side context without leaking it to the client
+ * Global exception handler to translate exceptions into standardized HTTP responses.
  */
 @Slf4j
 @RestControllerAdvice

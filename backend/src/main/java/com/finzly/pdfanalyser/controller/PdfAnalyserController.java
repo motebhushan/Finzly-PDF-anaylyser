@@ -13,7 +13,6 @@ import java.io.IOException;
 
 /**
  * REST controller exposing PDF analysis endpoints.
- * Keeps thin — all business logic lives in PdfAnalyserService.
  */
 @Slf4j
 @RestController

@@ -23,14 +23,8 @@ import java.util.Map;
 import java.util.UUID;
 
 /**
- * Concrete implementation of GeminiClient that calls Google's Gemini API.
- *
- * PDF Handling Strategy — Gemini Files API (2-step):
- *   Step 1: Download PDF bytes and upload to Gemini Files API → get a managed file_uri
- *   Step 2: Call generateContent referencing that file_uri via file_data
- *
- * This is the correct approach for newer Gemini models (gemini-3.6-flash etc.)
- * which require proper file references rather than raw inline base64.
+ * Concrete implementation of GeminiClient that interacts with Google's Gemini API.
+ * Uses the Gemini Files API to upload the PDF, then references the file in the generateContent call.
  */
 @Slf4j
 @Component

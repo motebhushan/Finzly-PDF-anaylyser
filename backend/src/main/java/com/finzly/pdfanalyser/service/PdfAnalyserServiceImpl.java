@@ -11,9 +11,7 @@ import org.springframework.stereotype.Service;
  * Orchestrates PDF analysis:
  *   1. Validate the PDF URL (structural + reachability)
  *   2. Delegate to the LLM client for analysis
- *
- * The service layer intentionally contains no HTTP or JSON logic — that lives
- * in the client layer. This keeps each layer focused and independently testable.
+ * Implementation of PdfAnalyserService handling PDF URL validation and LLM delegation.
  */
 @Slf4j
 @Service
